@@ -1,0 +1,48 @@
+<?php
+
+  use Illuminate\Support\Facades\Schema;
+  use Illuminate\Database\Schema\Blueprint;
+  use Illuminate\Database\Migrations\Migration;
+
+  class CreateConsumableResourceTable extends Migration
+  {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+      Schema::create('consumable_resources', function (Blueprint $table) {
+        $table->uuid('id');
+        $table->uuid('resources_type_id');
+        $table->integer('resource_importance');
+        $table->string('resource_name');
+        $table->string('resource_qantity');
+        $table->string('resource_unit');
+        $table->dateTime('last_shipment');
+        $table->dateTime('next_shipment');
+        $table->timestamps();
+
+        $table->primary('id');
+
+        $table->foreign('resources_type_id')
+              ->references('id')
+              ->on('resources_types')
+              ->onUpdate('cascade')
+              ->onDelete('cascade');
+      });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+      Schema::dropIfExists('files', function (Blueprint $table) {
+        $table->dropForeign('resources_type_id_foreign');
+      });
+    }
+  }
