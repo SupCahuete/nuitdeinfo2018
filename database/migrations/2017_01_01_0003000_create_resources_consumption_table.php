@@ -35,7 +35,7 @@
      */
     public function down()
     {
-      Schema::dropIfExists('files', function (Blueprint $table) {
+      Schema::dropIfExists('resources_consumptions', function (Blueprint $table) {
         $table->dropForeign('resources_id_foreign');
       });
     }

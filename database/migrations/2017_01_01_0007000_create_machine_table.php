@@ -15,11 +15,11 @@
     {
       Schema::create('machines', function (Blueprint $table) {
         $table->uuid('id');
-        $table->string('machine_name');
-        $table->string('machine_energy');
-        $table->string('machine_type');
-        $table->string('machine_job');
-        $table->string('machine_state');
+        $table->string('name');
+        $table->string('energy');
+        $table->string('type');
+        $table->string('job');
+        $table->string('state');
         $table->dateTime('last_check');
         $table->dateTime('next_check');
         $table->timestamps();
@@ -35,7 +35,7 @@
      */
     public function down()
     {
-      Schema::dropIfExists('files', function (Blueprint $table) {
+      Schema::dropIfExists('machines', function (Blueprint $table) {
       });
     }
   }

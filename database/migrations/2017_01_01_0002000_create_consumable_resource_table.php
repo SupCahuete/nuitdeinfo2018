@@ -17,8 +17,8 @@
         $table->uuid('id');
         $table->uuid('resources_type_id');
         $table->integer('resource_importance');
-        $table->string('resource_name');
-        $table->string('resource_qantity');
+        $table->string('name');
+        $table->string('quantity');
         $table->string('resource_unit');
         $table->dateTime('last_shipment');
         $table->dateTime('next_shipment');
@@ -41,7 +41,7 @@
      */
     public function down()
     {
-      Schema::dropIfExists('files', function (Blueprint $table) {
+      Schema::dropIfExists('consumable_resources', function (Blueprint $table) {
         $table->dropForeign('resources_type_id_foreign');
       });
     }

@@ -42,7 +42,7 @@
      */
     public function down()
     {
-      Schema::dropIfExists('files', function (Blueprint $table) {
+      Schema::dropIfExists('drugs_symptoms', function (Blueprint $table) {
         $table->dropForeign('drug_id_foreign');
         $table->dropForeign('symptom_id_foreign');
       });

@@ -15,7 +15,7 @@
     {
       Schema::create('diseases', function (Blueprint $table) {
         $table->uuid('id');
-        $table->uuid('disease_name');
+        $table->string('name');
         $table->timestamps();
 
         $table->primary('id');
@@ -29,7 +29,7 @@
      */
     public function down()
     {
-      Schema::dropIfExists('files', function (Blueprint $table) {
+      Schema::dropIfExists('diseases', function (Blueprint $table) {
       });
     }
   }

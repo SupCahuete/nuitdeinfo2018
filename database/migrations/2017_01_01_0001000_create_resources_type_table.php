@@ -15,7 +15,7 @@
     {
       Schema::create('resources_types', function (Blueprint $table) {
         $table->uuid('id');
-        $table->string('reources_type_name');
+        $table->string('name');
         $table->timestamps();
 
         $table->primary('id');
@@ -29,7 +29,7 @@
      */
     public function down()
     {
-      Schema::dropIfExists('files', function (Blueprint $table) {
+      Schema::dropIfExists('resources_types', function (Blueprint $table) {
       });
     }
   }
