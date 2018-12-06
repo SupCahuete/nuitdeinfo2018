@@ -18,8 +18,8 @@ return [
 
 
   'defaults' => [
-    'guard' => 'frontuser',
-    'passwords' => 'frontuser',
+    'guard' => 'guest',
+    'passwords' => 'guest',
   ],
 
   /*
@@ -53,13 +53,13 @@ return [
     /*-----------------
      |   WEB Guards   |
      -----------------*/
-    'frontuser'  => [
+    'guest'  => [
       'driver' => 'session',
-      'provider' => 'frontuser',
+      'provider' => 'guest',
 
       'api' => [
         'driver' => 'token',
-        'provider' => 'frontuser',
+        'provider' => 'guest',
       ]
     ],
     /*TAG_GUARDS_WEB*/
@@ -89,9 +89,9 @@ return [
   */
 
   'providers' => [
-    'frontuser'  => [
+    'guest'  => [
       'driver' => 'eloquent',
-      'model' => App\Models\Frontuser::class,
+      'model' => App\Models\Guest::class,
     ],
     /*TAG_PROVIDERS*/
   ],
@@ -112,9 +112,9 @@ return [
   */
 
   'passwords' => [
-    'frontuser'  => [
-      'provider' => 'frontuser',
-      'table' => 'frontusers_password_resets',
+    'guest'  => [
+      'provider' => 'guest',
+      'table' => 'guests_password_resets',
       'expire' => '60',
     ],
     /*TAG_PASSWORDS*/

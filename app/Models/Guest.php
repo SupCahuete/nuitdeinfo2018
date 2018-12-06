@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use Ada\Assistants\Traits\RepositoryAssistant as Repository;
 
-class Frontuser extends Authenticatable
+class Guest extends Authenticatable
 {
 
   use Notifiable, Repository;

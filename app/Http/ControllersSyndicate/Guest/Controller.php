@@ -8,6 +8,8 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Auth;
 
+use App\Models\Guest;
+
 class Controller extends RoutingController
 {
   use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
@@ -17,7 +19,12 @@ class Controller extends RoutingController
    *
    * @var string
    */
-  protected $guard = NULL;
+  protected $guard = 'guest';
+
+  /**
+   * @var string
+   */
+  protected $userDiskS3 = 'guest';
 
   /**
    * Attempt to get the guard from the local cache.
@@ -26,6 +33,33 @@ class Controller extends RoutingController
    */
   protected function guard() {
     return Auth::guard($this->guard);
+  }
+
+  /**
+   * Attempt to get the user from the local cache.
+   *
+   * @return Guest|null
+   */
+  protected function user() {
+    return $this->guard()->user();
+  }
+
+  /**
+   * Return Guest model with id attributes.
+   *
+   * @return Guest
+   */
+  protected function userModel() {
+    return (new Guest())->setAttribute('id', $this->guard()->id());
+  }
+
+  /**
+   * Return Builder for Guest model.
+   *
+   * @return Guest
+   */
+  protected function Guest() {
+    return (new Guest());
   }
 
 }

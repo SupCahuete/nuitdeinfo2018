@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
-use \App\Models\Frontuser;
+use \App\Models\Guest;
 
 class FrontusersTableSeeder extends Seeder
 {
@@ -32,11 +32,11 @@ class FrontusersTableSeeder extends Seeder
                           Colunms
         -------------------------------------------*/
 
-        'id' => Frontuser::uuid4(),
+        'id' => Guest::uuid4(),
 
         'email' => "eric$i@test.com",
         'password' => bcrypt("eric$i"),
-        'api_token' => Frontuser::getNewApiToken(),
+        'api_token' => Guest::getNewApiToken(),
 
         'name' => "Eric$i",
 

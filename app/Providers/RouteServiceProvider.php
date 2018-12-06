@@ -58,18 +58,10 @@ class RouteServiceProvider extends ServiceProvider
     Route::group([
       'middleware' => 'web',
       'namespace' => $this->namespace,
+//      'prefix' => 'guest',
       'as' => 'guest.', // Modifications are to be expected after the begining of the developement.
     ], function ($router) {
       require base_path('routes/WebGuest.php');
-    });
-
-    Route::group([
-      'middleware' => 'web',
-      'namespace' => $this->namespace,
-      'prefix' => 'frontuser', // client
-      'as' => 'frontuser.', // frontuser - Modifications are to be expected after the begining of the developement.
-    ], function ($router) {
-      require base_path('routes/WebFrontuser.php');
     });
     /*TAG_ROUTE_WEB*/
   }
@@ -95,15 +87,6 @@ class RouteServiceProvider extends ServiceProvider
       'as' => 'api.guest.', // Modifications are to be expected after the beginin of the developement.
     ], function ($router) {
       require base_path('routes/ApiGuest.php');
-    });
-
-    Route::group([
-      'middleware' => 'api',
-      'namespace' => $this->namespace,
-      'prefix' => 'api.frontuser', // api.frontuser
-      'as' => 'api.frontuser.', // api.frontuser - Modifications are to be expected after the begining of the developement.
-    ], function ($router) {
-      require base_path('routes/ApiFrontuser.php');
     });
     /*TAG_ROUTE_API*/
   }

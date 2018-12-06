@@ -20,7 +20,7 @@ return [
     ],
 
     'stripe' => [
-      'model' => App\Models\Frontuser::class,
+      'model' => App\Models\Guest::class,
       'key' => env('STRIPE_KEY'),
       'secret' => env('STRIPE_SECRET'),
       'plans' => [

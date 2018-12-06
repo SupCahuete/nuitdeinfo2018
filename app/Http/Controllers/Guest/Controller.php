@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Frontuser;
+namespace App\Http\Controllers\Guest;
 
-use App\Http\ControllersSyndicate\Frontuser\Controller as BaseController;
+use App\Http\ControllersSyndicate\Guest\Controller as BaseController;
 
 class Controller extends BaseController
 {
