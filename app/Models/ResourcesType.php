@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use Ada\Assistants\Traits\RepositoryAssistant;
 
-class TAG_CLASS_NAME extends Model
+class ResourcesType extends Model
 {
   use RepositoryAssistant;
 
@@ -67,6 +67,6 @@ class TAG_CLASS_NAME extends Model
    * @var array
    */
   protected $hidden = [
-    /*TAG_HIDDEN*/
+    // 
   ];
 }
