@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Guest;
 
 use Illuminate\Http\Request;
+use App\Models\Machine;
 
 class TelemetriesController extends Controller
 {
@@ -23,7 +24,9 @@ class TelemetriesController extends Controller
    */
   public function index()
   {
-    return view('guest.telemetries.index');
+    return view('guest.telemetries.index')->with([
+      'machines' => Machine::all(),
+    ]);
   }
 
   /**

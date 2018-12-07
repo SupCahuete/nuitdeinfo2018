@@ -37,7 +37,22 @@ nav {
 */
 
 #mainContainer {
-  //
+  
+  #pageContentContainer > .row {
+    width: 100%;
+
+    th {
+      border-radius: 0px;
+    }
+  }
+
+  .advanced-settings:hover {
+    cursor: pointer;
+  }
+
+  .advanced-settings {
+    margin-top: 250px;
+  }
 }
 
 
