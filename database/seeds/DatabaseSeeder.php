@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
 		$this->call(DiseasesSymptomsTableSeeder::class);
 		$this->call(ResourcesTableSeeder::class);
 		$this->call(MachinesTableSeeder::class);
+		$this->call(DrugsSymptomsTableSeeder::class);
 		/*TAG_CALL_SEEDER*/
   }
 }

@@ -72,6 +72,10 @@ class ResourcesController extends Controller
       $resource->quantity = $resource->quantity - $number;
     }
 
+    if ($resource->quantity < 0) {
+      $resource->quantity = 0;
+    }
+
     if ($resource->save()) {
       return response()->json([
         'quantity' => $resource->quantity,
