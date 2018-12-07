@@ -6,9 +6,9 @@ Ces menus sont à distinguer des sections « menus » que l'on peut retrouver su
     <div class="nav-wrapper">
         <ul>
         <li><a href="@route('guest.resources.index')" class="green-text">RESSOURCES</a></li>
-        <li><a href="" class="green-text">ENERGIE</a></li>
+        <li><a href="@route('guest.energies.index')" class="green-text">ENERGIE</a></li>
         <li><a href="@route('guest.health.index')" class="green-text">SANTE</a></li>
-        <li><a href="" class="green-text">TELEMETRIE</a></li>
+        <li><a href="@route('guest.telemetries.index')" class="green-text">TELEMETRIE</a></li>
         <li><a href="@route('guest.nav.index')" class="green-text">NAV</a></li>
         <li><a href="" class="green-text">REGLAGES</a></li>
         </ul>

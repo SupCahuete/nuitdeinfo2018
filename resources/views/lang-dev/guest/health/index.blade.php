@@ -58,7 +58,7 @@
 @section("content")
   <div class="row">
     <div class="col s6">
-      <P class="green-text">Relevés</P>
+      <p class="green-text">Relevés</p>
       <canvas id="chart" width="200" height="100" style="display: block; max-width: 400px; max-height: 150px;"></canvas>
     </div>
 
