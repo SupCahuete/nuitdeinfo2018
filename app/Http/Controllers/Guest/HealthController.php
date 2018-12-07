@@ -30,14 +30,15 @@ class HealthController extends Controller
   }
 
   /**
-   * Update the specified resource in storage.
-   *
    * @param  \App\Http\Requests\Request  $request
-   * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function heal(Request $request, $id)
+  public function heal(Request $request)
   {
-    dd($request->all());
+    $symptoms = Symptom::whereIn('id', $request->symptoms)->with('resources')->get();
+
+    return view('guest.health.result')->with([
+      'symptoms' => $symptoms,
+    ]);
   }
 }

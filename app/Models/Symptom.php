@@ -69,4 +69,8 @@ class Symptom extends Model
   protected $hidden = [
     // 
   ];
+
+  public function resources() {
+    return $this->belongsToMany('App\Models\Resource', 'drugs_symptoms', 'symptom_id', 'resource_id');
+  }
 }
