@@ -1,7 +1,8 @@
 
+
 /*
 |------------------------------------------
-|  FONTS
+|  FO_T_
 |------------------------------------------
 */
 
@@ -73,7 +74,7 @@
 
 /*
 |------------------------------------------
-|  VARIABLES
+|  VA_IA_LES
 |------------------------------------------
 */
 
@@ -85,7 +86,7 @@
 
 /*
 |------------------------------------------
-|  COLOR CLASS
+|  C__OR CLAS_
 |------------------------------------------
 */
 
@@ -128,7 +129,7 @@
 
 /*
 |------------------------------------------
-|  ALERT
+|  A_E_T
 |------------------------------------------
 */
 
@@ -171,7 +172,7 @@
 
 /*
 |------------------------------------------
-|  NAV
+|  N_V
 |------------------------------------------
 */
 
@@ -187,7 +188,31 @@
 
     li a {
       font-size: 20px;
+      position: relative;
     }
+    
+    .active:after {
+      content: "";
+      border: 2px solid #4CAF50;
+      width: 50%;
+      top: 0px;
+      left: calc(0px + 25%);
+      position: absolute;
+    }
+  }
+}
+
+#topBar {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 20px;
+  margin: 0px;
+  padding: 10px 20px;
+
+  p {
+    margin: 0px;
+    display: inline;
   }
 }
 
@@ -195,7 +220,23 @@
 
 /*
 |------------------------------------------
-|  GENERAL STYLE
+|  STA__BY SCR_EN
+|------------------------------------------
+*/
+
+#standbyScreen {
+  display: none;
+
+  .material-icons {
+    vertical-align: bottom;
+  }
+}
+
+
+
+/*
+|------------------------------------------
+|  GE_ERAL STYLE
 |------------------------------------------
 */
 
@@ -209,8 +250,25 @@ html, body {
 }
 
 #mainContainer {
+  display: flex;
+  justify-content: center;
   height: 100%;
   width: 100%;
+}
+
+#contentContainer {
+  border: 5px solid #636363;
+
+  .separator {
+    border: 1px solid #1B5E20;
+    margin: 0px 100px;
+  }
+}
+
+body {
+  background-image: url('/assets/img/background.jpg');
+  background-size: cover;
+  height: 100vh;
 }
 
 .input-field label {
@@ -276,28 +334,11 @@ input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-def
   border-bottom: 2px solid $or-dark;
 }
 
-#mainContainer {
-  display: flex;
-  justify-content: center;
-}
-
-#contentContainer {
-  background-color: grey;
-  border: 5px solid #636363;
-}
-
-body {
-  background-image: url('/assets/img/background.jpg');
-  background-size: cover;
-  height: 100vh;
-}
-
-
 
 
 /*
 |------------------------------------------
-|  FORM
+|  F__M
 |------------------------------------------
 */
 form {
@@ -312,7 +353,7 @@ form {
 
 /*
 |------------------------------------------
-|  FOOTER
+|  F__TER
 |------------------------------------------
 */
 footer {
