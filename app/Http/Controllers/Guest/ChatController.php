@@ -38,9 +38,14 @@ class ChatController extends Controller
     setlocale(LC_ALL,$locale);
     putenv('LC_ALL='.$locale);
 
-    if ($request->text) {
+
+
+    if ($text = $request->text) {
+      $prefix = str_contains($text, '_') ? '' : 'recherchez_';
+      $text = str_replace(' ', '_', $text);
+
       $output = shell_exec(
-        "php -r \"echo shell_exec('python3 /media/psf/Home/www/info/storage/app/chat/chatbot.py -d rechechez_Help');\" 2>&1"
+        "php -r \"echo shell_exec('python3 /media/psf/Home/www/info/storage/app/chat/chatbot.py -d {$prefix}{$text}');\" 2>&1"
       );
     }
     else {

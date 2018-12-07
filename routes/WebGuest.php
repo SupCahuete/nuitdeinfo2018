@@ -51,12 +51,9 @@ Route::get('resources/remove/{id}/{number?}', ['as' => 'resources.remove', 'uses
 Route::get('health', ['as' => 'health.index', 'uses' => 'Guest\HealthController@index']);
 Route::post('health/heal', ['as' => 'health.heal', 'uses' => 'Guest\HealthController@heal']);
 
-<<<<<<< HEAD
 Route::get('chat', ['as' => 'chat.index', 'uses' => 'Guest\ChatController@index']);
 Route::post('chat/go', ['as' => 'chat.go', 'uses' => 'Guest\ChatController@go']);
-=======
 Route::get('nav', ['as' => 'nav.index', 'uses' => 'Guest\NavController@index']);
->>>>>>> d374a00d223766c40a17d39fa311fe40a52317c2
 
 /*TAG_ROUTE*/
 /*
