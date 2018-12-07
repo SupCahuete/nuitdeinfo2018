@@ -44,6 +44,10 @@ Route::get('/', ['as' => 'welcome.index', 'uses' => function () {
   return view('guest.welcome.index');
 }]);
 
+Route::get('resources', ['as' => 'resources.index', 'uses' => 'Guest\ResourcesController@index']);
+Route::get('resources/add/{id}/{number?}', ['as' => 'resources.add', 'uses' => 'Guest\ResourcesController@add']);
+Route::get('resources/remove/{id}/{number?}', ['as' => 'resources.remove', 'uses' => 'Guest\ResourcesController@remove']);
+
 /*TAG_ROUTE*/
 /*
 |--------------------------------------------------------------------------
