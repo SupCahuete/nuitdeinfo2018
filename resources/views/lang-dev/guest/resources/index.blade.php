@@ -79,7 +79,7 @@
           @foreach($resourcesGrouped as $resource)
             <tr>
               <td class="green-text">
-                <i class="material-icons">check</i> {{ $resource->name }} 
+                <i class="material-icons">check</i> {{ $resource->name }}
               </td>
               <td class="green-text">
                 <span class="quantity">{{ $resource->quantity }}</span> {{ $resource->resource_unit }}

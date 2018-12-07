@@ -51,6 +51,8 @@ Route::get('resources/remove/{id}/{number?}', ['as' => 'resources.remove', 'uses
 Route::get('health', ['as' => 'health.index', 'uses' => 'Guest\HealthController@index']);
 Route::post('health/heal', ['as' => 'health.heal', 'uses' => 'Guest\HealthController@heal']);
 
+Route::get('nav', ['as' => 'nav.index', 'uses' => 'Guest\NavController@index']);
+
 /*TAG_ROUTE*/
 /*
 |--------------------------------------------------------------------------
