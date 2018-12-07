@@ -37,7 +37,6 @@
 @endsection
 
 @section('title')
-  @config('app.name') - Chat
 @endsection
 
 
