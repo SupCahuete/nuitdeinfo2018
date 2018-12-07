@@ -31,7 +31,8 @@ class MachinesTableSeeder extends Seeder
                         Colunms
       -------------------------------------------*/
 
-      'name' => 'EricCuriosity',
+      'id' => Machine::uuid4(),
+      'name' => 'CH2019',
       'energy' => '87',
       'type' => 'Rover',
       'job' => 'Sécurité',
@@ -49,10 +50,11 @@ class MachinesTableSeeder extends Seeder
                         Colunms
       -------------------------------------------*/
 
-      'name' => 'EricDiscover',
+      'id' => Machine::uuid4(),
+      'name' => 'QrX16',
       'energy' => '92',
       'type' => 'Rover',
-      'job' => 'Explorer',
+      'job' => 'Transport',
       'state' => 'GO',
 
       'created_at' => $date,

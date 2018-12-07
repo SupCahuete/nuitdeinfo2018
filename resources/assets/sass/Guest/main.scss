@@ -203,16 +203,16 @@
 }
 
 #topBar {
-  position: absolute;
-  top: 0px;
-  right: 0px;
+  width: 100%;
   font-size: 20px;
   margin: 0px;
   padding: 10px 20px;
+  height: 50px;
 
   p {
     margin: 0px;
     display: inline;
+    padding: 0px 10px;
   }
 }
 
@@ -226,10 +226,6 @@
 
 #standbyScreen {
   display: none;
-
-  .material-icons {
-    vertical-align: bottom;
-  }
 }
 
 
@@ -258,11 +254,25 @@ html, body {
 
 #contentContainer {
   border: 5px solid #636363;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 
   .separator {
     border: 1px solid #1B5E20;
     margin: 0px 100px;
   }
+}
+
+#pageContentContainer {
+  margin-bottom: 64px;
+  height: 100%;
+  overflow: scroll;
+}
+
+.material-icons {
+  vertical-align: bottom;
 }
 
 body {

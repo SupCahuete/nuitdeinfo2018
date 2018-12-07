@@ -16,6 +16,11 @@ Ces menus sont à distinguer des sections « menus » que l'on peut retrouver su
 </nav>
 
 <div id="topBar">
-    <p class="date green-text"></p>
-    <p class="time green-text"></p>
+    <p class="time green-text right"></p>
+    <p class="date green-text right"></p>
+    <p class="green-text right">|</p>
+    <p class="green-text right"><span class="air-temp">--</span> °C (air)</p>
+    <p class="green-text right">|</p>
+    <p class="green-text right"><span class="ground-temp">--</span> °C (sol)</p>
+    <i class="material-icons green-text right">wb_sunny</i> 
 </div>

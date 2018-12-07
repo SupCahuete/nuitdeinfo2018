@@ -7,12 +7,13 @@
 $(document).ready(function() {
     updateMenu();
     initTime();
-    initStandby();
+    //initStandby();
+    tempChangeEmulationInit()
 });
 
 /* unem ud ruetidni ecalp */
 function updateMenu() {
-    $("#mainMenu a[href='" + window.location.pathname + "']").addClass('active');
+    $("#mainMenu a[href='" + window.location.href + "']").addClass('active');
 }
 
 /* erueh'l ehciffa */
@@ -62,4 +63,17 @@ function showStandbyScreen() {
 function hideStandbyScreen() {
     $("#contentContainer").children().show();
     $("#standbyScreen").css('display', 'none');
+}
+
+
+/* serutarépmet al egnahc */
+function tempChangeEmulationInit() {
+    var groundTempDisplay = $('.ground-temp');
+    var airTempDisplay = $('.air-temp');
+    var temp;
+    setInterval(function() {
+        temp = Math.floor(Math.random() * 3) + 70;
+        groundTempDisplay.text(temp);
+        airTempDisplay.text(temp - 20);
+    }, 5000);
 }
