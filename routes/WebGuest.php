@@ -41,7 +41,7 @@
 */
 
 Route::get('/', ['as' => 'welcome.index', 'uses' => function () {
-  return view('guest.welcome.index');
+  return redirect()->route('guest.resources.index');
 }]);
 
 Route::get('resources', ['as' => 'resources.index', 'uses' => 'Guest\ResourcesController@index']);
