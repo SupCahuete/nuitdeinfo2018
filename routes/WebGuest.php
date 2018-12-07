@@ -48,6 +48,9 @@ Route::get('resources', ['as' => 'resources.index', 'uses' => 'Guest\ResourcesCo
 Route::get('resources/add/{id}/{number?}', ['as' => 'resources.add', 'uses' => 'Guest\ResourcesController@add']);
 Route::get('resources/remove/{id}/{number?}', ['as' => 'resources.remove', 'uses' => 'Guest\ResourcesController@remove']);
 
+Route::get('health', ['as' => 'health.index', 'uses' => 'Guest\HealthController@index']);
+Route::post('health/heal', ['as' => 'health.heal', 'uses' => 'Guest\HealthController@heal']);
+
 /*TAG_ROUTE*/
 /*
 |--------------------------------------------------------------------------
