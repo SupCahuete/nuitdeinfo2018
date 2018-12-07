@@ -258,6 +258,7 @@ html, body {
   position: relative;
   display: flex;
   flex-direction: column;
+  color: white;
 
   .separator {
     border: 1px solid #1B5E20;
@@ -268,7 +269,9 @@ html, body {
 #pageContentContainer {
   margin-bottom: 64px;
   height: 100%;
-  overflow: scroll;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .material-icons {
@@ -279,6 +282,10 @@ body {
   background-image: url('/assets/img/background.jpg');
   background-size: cover;
   height: 100vh;
+}
+
+.tabs .indicator {
+  background-color: #4CAF50;
 }
 
 .input-field label {

@@ -9,8 +9,8 @@ Ces menus sont à distinguer des sections « menus » que l'on peut retrouver su
         <li><a href="" class="green-text">ENERGIE</a></li>
         <li><a href="@route('guest.health.index')" class="green-text">SANTE</a></li>
         <li><a href="" class="green-text">TELEMETRIE</a></li>
-        <li><a href="" class="green-text">NAV</a></li>
-        <li><a href="@route('guest.chat.index')" class="green-text">CHAT</a></li>
+        <li><a href="@route('guest.nav.index')" class="green-text">NAV</a></li>
+          <li><a href="@route('guest.chat.index')" class="green-text">CHAT</a></li>
         </ul>
     </div>
 </nav>
