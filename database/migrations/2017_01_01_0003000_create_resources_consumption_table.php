@@ -22,7 +22,7 @@
         $table->primary('id');
         $table->foreign('resource_id')
           ->references('id')
-          ->on('consumable_resources')
+          ->on('resources')
           ->onUpdate('cascade')
           ->onDelete('cascade');
       });
@@ -36,7 +36,7 @@
     public function down()
     {
       Schema::dropIfExists('resources_consumptions', function (Blueprint $table) {
-        $table->dropForeign('resources_id_foreign');
+        $table->dropForeign('resource_id_foreign');
       });
     }
   }

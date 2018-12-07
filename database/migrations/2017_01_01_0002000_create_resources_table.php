@@ -4,7 +4,7 @@
   use Illuminate\Database\Schema\Blueprint;
   use Illuminate\Database\Migrations\Migration;
 
-  class CreateConsumableResourceTable extends Migration
+  class CreateResourcesTable extends Migration
   {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@
      */
     public function up()
     {
-      Schema::create('consumable_resources', function (Blueprint $table) {
+      Schema::create('resources', function (Blueprint $table) {
         $table->uuid('id');
         $table->uuid('resources_type_id');
         $table->integer('resource_importance');
@@ -41,7 +41,7 @@
      */
     public function down()
     {
-      Schema::dropIfExists('consumable_resources', function (Blueprint $table) {
+      Schema::dropIfExists('resources', function (Blueprint $table) {
         $table->dropForeign('resources_type_id_foreign');
       });
     }
