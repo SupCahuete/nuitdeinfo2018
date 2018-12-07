@@ -3,16 +3,16 @@
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
-use \App\Models\Guest;
+use App\Models\Disease;
 
-class FrontusersTableSeeder extends Seeder
+class DiseasesTableSeeder extends Seeder
 {
   /**
    * Arrays of table's name
    *
    * @var string $tablesName
    */
-  private $tablesName = "frontusers";
+  private $tableName = "diseases";
 
 
   /**
@@ -24,31 +24,29 @@ class FrontusersTableSeeder extends Seeder
   {
     $date = Carbon::now();
 
-    DB::table($this->tablesName)->delete();
+    $diseases = collect([
+      [ 'name' => 'Gastro-entérite' ],
+      [ 'name' => 'Intoxication' ],
+      [ 'name' => 'Insolation' ],
+    ]);
 
-    for ($i=1; $i<=1; $i++) {
-      DB::table($this->tablesName)->insert([
+    DB::table($this->tableName)->delete();
+
+    foreach ($diseases as $d) {
+      DB::table($this->tableName)->insert([
         /*-------------------------------------------
                           Colunms
         -------------------------------------------*/
-
-        'id' => Guest::uuid4(),
-
-        'email' => "eric$i@test.com",
-        'password' => bcrypt("eric$i"),
-        'api_token' => Guest::getNewApiToken(),
-
-        'name' => "Eric$i",
-
-        /*-------------------------------------------
-        -------------------------------------------*/
+        'id' => Disease::uuid4(),
+        'name' => $d['name'],
 
         'created_at' => $date,
         'updated_at' => $date,
+
+        /*-------------------------------------------
+        -------------------------------------------*/
       ]);
     }
-
-
 
   }
 }

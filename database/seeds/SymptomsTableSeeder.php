@@ -3,14 +3,16 @@
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
-class TAG_CLASS_NAME extends Seeder
+use App\Models\Symptom;
+
+class SymptomsTableSeeder extends Seeder
 {
   /**
    * Arrays of table's name
    *
    * @var string $tablesName
    */
-  private $tableName = "TAG_TABLE_NAME";
+  private $tableName = "symptoms";
 
 
   /**
@@ -22,25 +24,27 @@ class TAG_CLASS_NAME extends Seeder
   {
     $date = Carbon::now();
 
-    /*
-     * Uncomment if needed.
-     * Clean table's data.
-     */
-    //DB::table($this->tableName)->delete();
+    $symptoms = collect([
+      [ 'name' => 'Diarrhée' ],
+      [ 'name' => 'Toux' ],
+      [ 'name' => 'Fièvre' ],
+      [ 'name' => 'Vomissement' ],
+      [ 'name' => 'Saignement' ],
+      [ 'name' => 'Maux de tête' ],
+      [ 'name' => 'Hallucination' ],
+      [ 'name' => 'Tension élevée' ],
+      [ 'name' => 'Tension faible' ],
+    ]);
 
-    /*
-     * Uncomment if needed.
-     * Reset auto increment.
-     */
-    //DB::statement("ALTER TABLE ".$this->tableName." AUTO_INCREMENT = 0");
+    DB::table($this->tableName)->delete();
 
-    for ($i=1; $i<=1; $i++) {
+    foreach ($symptoms as $s) {
       DB::table($this->tableName)->insert([
         /*-------------------------------------------
                           Colunms
         -------------------------------------------*/
-
-        /*TAG_COLUMN*/
+        'id' => Symptom::uuid4(),
+        'name' => $s['name'],
 
         'created_at' => $date,
         'updated_at' => $date,

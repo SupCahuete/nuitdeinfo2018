@@ -20,8 +20,8 @@
         $table->string('type');
         $table->string('job');
         $table->string('state');
-        $table->dateTime('last_check');
-        $table->dateTime('next_check');
+        $table->dateTime('last_check')->nullable();
+        $table->dateTime('next_check')->nullable();
         $table->timestamps();
 
         $table->primary('id');

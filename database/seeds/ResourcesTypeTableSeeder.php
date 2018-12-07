@@ -3,14 +3,16 @@
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
-class TAG_CLASS_NAME extends Seeder
+use App\Models\ResourcesType;
+
+class ResourcesTypeTableSeeder extends Seeder
 {
   /**
    * Arrays of table's name
    *
    * @var string $tablesName
    */
-  private $tableName = "TAG_TABLE_NAME";
+  private $tableName = "resources_types";
 
 
   /**
@@ -22,25 +24,23 @@ class TAG_CLASS_NAME extends Seeder
   {
     $date = Carbon::now();
 
-    /*
-     * Uncomment if needed.
-     * Clean table's data.
-     */
-    //DB::table($this->tableName)->delete();
+    $resources = collect([
+      [ 'name' => 'Énergies' ],
+      [ 'name' => 'Boissons' ],
+      [ 'name' => 'Nouritures' ],
+      [ 'name' => 'Pièces de rechange' ],
+      [ 'name' => 'Médicaments' ],
+    ]);
 
-    /*
-     * Uncomment if needed.
-     * Reset auto increment.
-     */
-    //DB::statement("ALTER TABLE ".$this->tableName." AUTO_INCREMENT = 0");
+    DB::table($this->tableName)->delete();
 
-    for ($i=1; $i<=1; $i++) {
+    foreach ($resources as $r) {
       DB::table($this->tableName)->insert([
         /*-------------------------------------------
                           Colunms
         -------------------------------------------*/
-
-        /*TAG_COLUMN*/
+        'id' => ResourcesType::uuid4(),
+        'name' => $r['name'],
 
         'created_at' => $date,
         'updated_at' => $date,

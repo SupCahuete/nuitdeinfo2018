@@ -18,10 +18,10 @@
         $table->uuid('resources_type_id');
         $table->integer('resource_importance');
         $table->string('name');
-        $table->string('quantity');
+        $table->integer('quantity');
         $table->string('resource_unit');
-        $table->dateTime('last_shipment');
-        $table->dateTime('next_shipment');
+        $table->timestamp('last_shipment')->nullable();
+        $table->timestamp('next_shipment')->nullable();
         $table->timestamps();
 
         $table->primary('id');
