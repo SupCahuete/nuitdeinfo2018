@@ -1,6 +1,6 @@
 
 {{--------------------------------------------------------
-                   Extends Layout Blade
+                   6DV6DzdçBZDIBYZDUH
 --------------------------------------------------------}}
 @extends('guest.layouts.main')
 
@@ -8,7 +8,7 @@
 
 
 {{--------------------------------------------------------
-                           Head
+                          6V56TB98YZ78D9B8
 --------------------------------------------------------}}
 @section('meta')
   <meta name="description" content="">
@@ -44,7 +44,7 @@
 
 
 {{--------------------------------------------------------
-                      Alert messages
+                      C5ESV567BT8T
 --------------------------------------------------------}}
 @section("alert")
 @endsection
@@ -53,40 +53,89 @@
 
 
 {{--------------------------------------------------------
-                    Content page core
+                    BSDY9028BD8YD
 --------------------------------------------------------}}
 @section("content")
-  <form action="@route('guest.health.heal')" method="POST">
-    {{ csrf_field() }}
-
-    <div class="row">
-      <div class="input-field col s12 m12 l12">
-        <select multiple name="symptoms[]">
-          <option value="" disabled selected>Vos symptômes</option>
-          @foreach($symptoms as $symptom)
-            <option value="{!! $symptom->id !!}" >{{ $symptom->name }}</option>
-          @endforeach
-        </select>
-        <label>Indiquez vos symptômes</label>
-      </div>
+  <div class="row">
+    <div class="col s6">
+      <P class="green-text">Relevés</P>
+      <canvas id="chart" width="200" height="100" style="display: block; max-width: 400px; max-height: 150px;"></canvas>
     </div>
 
-    <div class="row">
-      <button type="submit" class="waves-effect waves-light btn col s8 offset-s2">Demander des médicaments</button>
+    <div class="col s6">
+      <p class="green-text">Outil d'auto-médication</p>
+      <form action="@route('guest.health.heal')" method="POST">
+        {{ csrf_field() }}
+
+        <div class="row">
+          <div class="input-field col s12">
+            <select multiple name="symptoms[]">
+              <option value="" disabled selected>Vos symptômes</option>
+              @foreach($symptoms as $symptom)
+                <option value="{!! $symptom->id !!}" >{{ $symptom->name }}</option>
+              @endforeach
+            </select>
+            <label>Indiquez vos symptômes</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <button type="submit" class="green-text waves-effect waves-green btn-flat col s8 offset-s2">Rechercher</button>
+        </div>
+      </form>
     </div>
-  </form>
+
+    <div class="col s6">
+      <p class="green-text">Recommandations médicales</p>
+      <div class="separator"></div>
+      <p class="green-text">Dr. Beckman, il y a 1h: "Toutes vos données de santé semblent, normales. Pensez à bien vous hydrater."</p>
+    </div>
+
+    <div class="col s6">
+      <p class="green-text">Dernier traitement:</p>
+      <div class="separator"></div>
+      <p class="green-text">Anti-douleurs (maux de tête) il a 2 jours</p>
+    </div>
+  </div>
 @endsection
 
 
 
 
 {{--------------------------------------------------------
-                          Script
+                         Je vais vous faire gagner tu temps, ça ne veut rien dire
 --------------------------------------------------------}}
 @section('script-body')
+  <script type="text/javascript" src="@js('chart.min.js')"></script>
   <script type="text/javascript">
     $(document).ready(function() {
       $('select').formSelect();
     });
+    
+
+    var ctx = document.getElementById("chart").getContext("2d");
+  var data = data = {
+    datasets: [{
+      data: [{
+            x: 0,
+            y: 85
+            }, {
+            x: 5,
+            y: 90
+            }, {
+            x: 15,
+            y: 88
+            }, {
+            x: 20,
+            y: 92
+        }],
+      borderColor: "#4CAF50",
+      label: 'Rythme Cardiaque'
+    }]
+  };
+  var barChart = new Chart(ctx, {
+    type: 'line',
+    data: data
+  });
   </script>
 @endsection

@@ -1,6 +1,6 @@
 
 {{--------------------------------------------------------
-                   Extends Layout Blade
+                   −·−· · −·−· ··  · ··· −  ··− −·  −·−· −−− −− −− · −· − ·− ·· ·−· · 
 --------------------------------------------------------}}
 @extends('guest.layouts.main')
 
@@ -8,7 +8,7 @@
 
 
 {{--------------------------------------------------------
-                           Head
+                           ···· · ·− −·· 
 --------------------------------------------------------}}
 @section('meta')
   <meta name="description" content="">
@@ -44,7 +44,7 @@
 
 
 {{--------------------------------------------------------
-                      Alert messages
+                      ···− −−− ··− ···  ···− −−− ··− ···  ·− −− ··− ··· · −−··  ···− ·−· ·− ·· −− · −· − 
 --------------------------------------------------------}}
 @section("alert")
 @endsection
@@ -53,25 +53,36 @@
 
 
 {{--------------------------------------------------------
-                    Content page core
+                    ·−  − ·−· ·− −·· ··− ·· ·−· ·  − −−− ··− −  −·−· ·  −−·− ··− ·−−−−· −−− −·  · −·−· ·−· ·· − 
 --------------------------------------------------------}}
 @section("content")
-  @foreach($symptoms as $symptom)
-    <h5>{{ $symptom->name }} :</h5>
-    <ul>
-      @foreach($symptom->resources as $resource)
-        <li>{{ $resource->name }}</li>
+  <div class="ressourcesContainer">
+    <table>
+      <tr>
+        <th class="green grey-text text-darken-4">Symptôme</th>
+        <th class="green grey-text text-darken-4">Traitement suggéré</th>
+      </tr>
+      @foreach($symptoms as $symptom)
+        <tr>
+          <td class="green-text">
+            <i class="material-icons">check</i> {{ $symptom->name }}
+          </td>
+          <td class="green-text">
+            @foreach($symptom->resources as $resource)
+              {{ $resource->name }}
+            @endforeach
+          </td>
+        </tr>
       @endforeach
-    </ul>
-    <br>
-  @endforeach
+    </table>
+  </div>
 @endsection
 
 
 
 
 {{--------------------------------------------------------
-                          Script
+                          ··· ·−−· −−− ·· ·−·· · ·−· −−−···  −·· ·− ·−· −·−  ···− ·− −·· −−− ·−·  · ··· −  ·−·· ·  ·−−· · ·−· ·  −·· ·  ·−·· ··− −·− · 
 --------------------------------------------------------}}
 @section('script-body')
   {{--<script type="text/javascript" src="@js()"></script>--}}

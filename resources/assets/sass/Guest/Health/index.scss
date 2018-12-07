@@ -37,7 +37,22 @@ nav {
 */
 
 #mainContainer {
-  //
+  
+  .select-dropdown {
+    color: #4CAF50;
+  }
+
+  .dropdown-content {
+    background-color: #1e281f;
+
+    li span{
+      color: white;
+    }
+  }
+
+  .caret {
+    fill: #4CAF50;
+  }
 }
 
 

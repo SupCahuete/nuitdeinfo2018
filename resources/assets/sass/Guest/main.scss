@@ -91,33 +91,33 @@
 */
 
 .text-or-pale {
-  color: $or-pale;
+  color: $green;
 }
 .back-or-pale {
-  background-color: $or-pale;
+  background-color: $green;
 }
 .back-hover-or-pale:hover {
-  background-color: $or-pale-hover;
+  background-color: $green-hover;
 }
 
 .text-or {
-  color: $or;
+  color: $green;
 }
 .back-or {
-  background-color: $or;
+  background-color: $green;
 }
 .back-hover-or:hover {
-  background-color: $or-hover;
+  background-color: $green-hover;
 }
 
 .text-or-dark {
-  color: $or-dark;
+  color: $green-dark;
 }
 .back-or-dark {
-  background-color: $or-dark;
+  background-color: $green-dark;
 }
 .back-hover-or-dark:hover {
-  background-color: $or-dark-hover;
+  background-color: $green-dark-hover;
 }
 
 .back-cyan {
@@ -289,7 +289,7 @@ body {
 }
 
 .input-field label {
-  color: $or-dark;
+  color: $green-dark;
   font-weight: 300;
 }
 
@@ -297,14 +297,14 @@ body {
 .input-field input[type=email]:focus + label,
 .input-field input[type=password]:focus + label,
 .input-field textarea:focus:not([readonly]) + label {
-  color: $or-dark;
+  color: $green-dark;
 }
 
 .input-field input[type=text]:focus,
 .input-field input[type=email]:focus,
 .input-field input[type=password]:focus,
 .input-field textarea:focus:not([readonly]) {
-  border-bottom: 1px solid $or-dark;
+  border-bottom: 1px solid $green-dark;
   box-shadow: 0;
 }
 
@@ -312,7 +312,7 @@ body {
 .input-field input[type=email],
 .input-field input[type=password],
 .input-field textarea {
-  border-bottom: 1px solid $or-dark;
+  border-bottom: 1px solid $green-dark;
   box-shadow: 0;
 }
 
@@ -320,7 +320,7 @@ body {
 .input-field input[type=email].valid,
 .input-field input[type=password].valid,
 .input-field textarea.valid {
-  border-bottom: 1px solid $or-dark;
+  border-bottom: 1px solid $green-dark;
   box-shadow: 0;
 }
 
@@ -328,27 +328,27 @@ body {
 .input-field input[type=email].invalid,
 .input-field input[type=password].invalid,
 .input-field textarea.invalid {
-  border-bottom: 1px solid $or-dark;
+  border-bottom: 1px solid $green-dark;
   box-shadow: 0;
 }
 
 .input-field .prefix.active {
-  color: $or-dark;
+  color: $green-dark;
 }
 
 input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid $or-dark;
-  -webkit-box-shadow: 0 1px 0 0 $or-dark;
-  box-shadow: 0 1px 0 0 $or-dark;
+  border-bottom: 1px solid $green-dark;
+  -webkit-box-shadow: 0 1px 0 0 $green-dark;
+  box-shadow: 0 1px 0 0 $green-dark;
 }
 
 input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label{
-  color: $or-dark;
+  color: $green-dark;
 }
 
 [type="checkbox"]:checked+span:not(.lever):before {
-  border-right: 2px solid $or-dark;
-  border-bottom: 2px solid $or-dark;
+  border-right: 2px solid $green-dark;
+  border-bottom: 2px solid $green-dark;
 }
 
 
