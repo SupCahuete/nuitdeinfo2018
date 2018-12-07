@@ -83,16 +83,15 @@
   <script type="text/javascript">
     $(document).ready(function() {
       initChat();
-    }):
+    });
 
     function initChat() {
       $("#chat").submit(function(e) {
         e.preventDefault();
         var form = $(this);
 
-        $.post(form.attr('href'), {text: $("#textChat", form).val()})
-        .done(function(data) {
-          $("#answerContainer").html(data);
+        $.post(form.attr('action'), {text: $("#textChat", form).val()}, function(data) {
+          $(".answerContainer").html(data);
         });
       });
     }
