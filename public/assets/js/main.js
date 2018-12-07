@@ -7,7 +7,7 @@
 $(document).ready(function() {
     updateMenu();
     initTime();
-    //initStandby();
+    initStandby();
     tempChangeEmulationInit()
 });
 
