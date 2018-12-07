@@ -55,6 +55,14 @@ Route::get('chat', ['as' => 'chat.index', 'uses' => 'Guest\ChatController@index'
 Route::post('chat/go', ['as' => 'chat.go', 'uses' => 'Guest\ChatController@go']);
 Route::get('nav', ['as' => 'nav.index', 'uses' => 'Guest\NavController@index']);
 
+Route::get('telemetries', ['as' => 'telemetries.index', 'uses' => 'Guest\TelemetriesController@index']);
+Route::post('telemetries/store', ['as' => 'telemetries.store', 'uses' => 'Guest\TelemetriesController@store']);
+Route::post('telemetries/update/{id}', ['as' => 'telemetries.update', 'uses' => 'Guest\TelemetriesController@update']);
+
+Route::get('energies', ['as' => 'energies.index', 'uses' => 'Guest\EnergiesController@index']);
+Route::post('energies/store', ['as' => 'energies.store', 'uses' => 'Guest\EnergiesController@store']);
+Route::post('energies/update/{id}', ['as' => 'energies.update', 'uses' => 'Guest\EnergiesController@update']);
+
 /*TAG_ROUTE*/
 /*
 |--------------------------------------------------------------------------
