@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Guest;
 
 use App\Models\Machine;
 use Illuminate\Http\Request;
+use App\Models\Machine;
 
 class TelemetriesController extends Controller
 {

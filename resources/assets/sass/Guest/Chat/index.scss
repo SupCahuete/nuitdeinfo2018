@@ -37,7 +37,11 @@ nav {
 */
 
 #mainContainer {
-  //
+  .answerContainer {
+    overflow-y: scroll;
+    height: 100%;
+    padding: 0px 20px;
+  }
 }
 
 

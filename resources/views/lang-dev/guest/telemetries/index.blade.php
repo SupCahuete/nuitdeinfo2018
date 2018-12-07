@@ -57,16 +57,38 @@
 --------------------------------------------------------}}
 @section("content")
   <div class="row">
-    <div class="col s6">
-      <P class="green-text">Niveaux</P>
-      <canvas id="chart" width="200" height="100" style="display: block; max-width: 400px; max-height: 150px;"></canvas>
-    </div>
+    <div class="col s12">
+      <table>
+        <tr>
+          <th class="green grey-text text-darken-4">Appareils</th>
+          <th class="green grey-text text-darken-4">Type</th>
+          <th class="green grey-text text-darken-4">Mode</th>
+          <th class="green grey-text text-darken-4">Signal</th>
+        </tr>
+        @foreach($machines as $machine)
+          <tr>
+            <td class="green-text">
+              <i class="material-icons">check</i> {{ $machine->name }}
+            </td>
+            <td class="green-text">
+              {{ $machine->type }}
+            </td>
+            <td class="green-text">
+              {{ $machine->state }}
+            </td>
+            <td class="green-text">
+              <i class="material-icons">signal_wifi_4_bar</i>
+            </td>
+          </tr>
+        @endforeach
+      </table>
+      </div>
 
-    <div class="col s6">
-      <p class="green-text">Etat des equipements</p>
-      <div class="separator"></div>
-      <p class="green-text">RAS</p>
-      
+      <div class="advanced-settings">
+        <h5 class="green-text center">Télémétrie avancée</h5>
+        <p class="green-text center"><i class="material-icons center medium">keyboard_arrow_down</i></p>
+      </div>
+
     </div>
   </div>
 @endsection
