@@ -69,4 +69,8 @@ class Resource extends Model
   protected $hidden = [
     // 
   ];
+
+  public function type() {
+    return $this->belongsTo('App\Models\ResourcesType', 'resources_type_id', 'id');
+  }
 }

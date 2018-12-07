@@ -25,7 +25,7 @@ class ResourcesController extends Controller
   public function index()
   {
     return view('guest.resources.index')->with([
-      'resources' => Resource::orderBy('name')->get(),
+      'resources' => Resource::orderBy('name')->with('type')->get(),
     ]);
   }
 
