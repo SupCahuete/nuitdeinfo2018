@@ -37,7 +37,16 @@ nav {
 */
 
 #mainContainer {
-  //
+  
+  .ressourcesContainer {
+    overflow: scroll;
+    height: 100%;
+    padding: 0px 20px;
+  }
+
+  th {
+    border-radius: 0px;
+  }
 }
 
 
