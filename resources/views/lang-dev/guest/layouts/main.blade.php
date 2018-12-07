@@ -1202,10 +1202,14 @@
     <!-- C'est la qu'on inclut notre device trop classe, toute ressemblance avec un appareil d'un certain jeu video serait purement fortuite -->
     <svg id="device" width="1352" height="917" viewBox="0 0 1352 917" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M285.5 689V163.5L348 105.5H1165L1224.5 163.5V746.5L1103 872.5H651.5L519.5 746.5H348L285.5 689Z" fill="url(#paint0_linear)"/>
-      <foreignObject id="contentContainer" class="grey darken-4" x="360" y="177" width="800" height="500">
-        @include('guest.layouts.menu')
-        @yield('content')
-        @include('guest.layouts.standby')
+      <foreignObject x="360" y="177" width="800" height="500">
+        <div id="contentContainer" class="grey darken-4">
+          @include('guest.layouts.menu')
+          <div id="pageContentContainer">
+            @yield('content')
+          </div>
+          @include('guest.layouts.standby')
+        </div>
       </foreignObject>
       <g filter="url(#filter0_d)">
       <rect x="661" y="742" width="197" height="97" fill="url(#paint1_radial)"/>
@@ -1275,6 +1279,7 @@
   
   <!-- I'm too sexy for my script -->
   <script type="text/javascript" src="@js('jquery.js')"></script>
+  <script type="text/javascript" src="@js('materialize.min.js')"></script>
   <script type="text/javascript" src="@js('main.js')"></script>
   @yield('script-body')
 </body>
