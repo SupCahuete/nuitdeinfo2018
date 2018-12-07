@@ -22,5 +22,5 @@ Ces menus sont à distinguer des sections « menus » que l'on peut retrouver su
     <p class="green-text right"><span class="air-temp">--</span> °C (air)</p>
     <p class="green-text right">|</p>
     <p class="green-text right"><span class="ground-temp">--</span> °C (sol)</p>
-    <i class="material-icons green-text right">wb_sunny</i> 
+    <i class="material-icons green-text right">wb_sunny</i>
 </div>
